@@ -131,7 +131,7 @@ with c1:
     top_df = build_table_df({t: data[t] for t in TOP_STOCKS})
     def highlight(row):
         return ['color: green' if x > 0 else 'color: #ff4d4d' if col in ['Change ₹','Change %'] and (x := row['Change ₹']) else '' for col in row.index]
-    st.dataframe(top_df.style.format("{:.2f}", subset=top_df.columns.tolist()), height=600)
+    st.dataframe(top_df.round(2), height=600)
 
 with c2:
     st.subheader("Notes")
