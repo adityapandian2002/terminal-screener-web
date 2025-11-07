@@ -99,12 +99,12 @@ data = fetch_latest(all_tickers)
 
 # fetch indices (simple)
 try:
-    nifty = yf.Ticker("^NSEI").history(period="1d", interval="1m", auto_adjust=True")
+    nifty = yf.Ticker("^NSEI").history(period="1d", interval="1m", auto_adjust=True)
     nifty_price = float(nifty["Close"].dropna().iloc[-1])
 except Exception:
     nifty_price = 0.0
 try:
-    sensex = yf.Ticker("^BSESN").history(period="1d", interval="1m", auto_adjust=True")
+    sensex = yf.Ticker("^BSESN").history(period="1d", interval="1m", auto_adjust=True)
     sensex_price = float(sensex["Close"].dropna().iloc[-1])
 except Exception:
     sensex_price = 0.0
